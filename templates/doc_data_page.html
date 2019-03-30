@@ -1,0 +1,43 @@
+<!doctype html>
+
+<body bgcolor="#CCCCCC">
+
+<h1>{{ data.title }}</h1>
+
+<table>
+        <tr>
+          <td>Director: {{ data.director }}</td>
+        </tr>
+	<tr>
+            <td>Starring: {{ data.starring }}</td>
+
+        </tr>
+	<tr>
+        <td>Country: {{ data.country }}</td>
+	</tr>
+	<tr>
+            <td>Location: {{ data.location }}</td>
+    </tr>
+        <tr>
+            <td>Running Time: {{ data.running_time }}</td>
+	</tr>
+	<tr>
+        <td>Text: {{ data.text }}</td>
+	</tr>
+
+    <form action="/results" name="search" method="post">
+  More Like This:
+        <input type="hidden" name="query", value="{{ movie_as_query }}">
+        <input type="submit" value="Search">
+
+
+  {# Use a hidden variable called page_num to track the result page number.
+     We will increment this when the next button is selected. #}
+  <input type="hidden" name="page_num" value="1">
+    </form>
+	
+</table>
+<br>
+<br>
+(Use browser "back" button to return to search results.)
+</body>
